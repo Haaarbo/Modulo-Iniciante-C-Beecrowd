@@ -1,2 +1,2 @@
-# Modulo-Iniciante-C-Beecrowd
- Resolução das questões do módulo iniciante da beecrowd, em C.
+# Begginer-Category-C-Beecrowd
+Troubleshooting the beecrowd beginner module, in C.
