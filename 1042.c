@@ -1,28 +1,23 @@
 #include <stdio.h>
-#define TAM 3
 
 int main()
 {
-    int n[TAM], menor[TAM] = {0}, i = 0;
+    int n1, n2, n3, maior, meio, menor;
 
-    scanf("%i %i %i", &n[0], &n[1], &n[2]);
+    scanf("%i %i %i", &n1, &n2, &n3);
 
-    for(i = 0; i < TAM; i++)
-        menor[i] = n[i];
-    //copiando valores do array para menor
+    maior = (n1 > n2) ? n1 : n2;
+    maior = (n3 > maior) ? n3 : maior;
 
-    for(i = 0; i < TAM; i++)
-        if(n[i] < menor[i])
-            menor[i] = n[i];
-    //comparando os valores, e o array menor[] pega os menores valores
+    menor = (n1 < n2) ? n1 : n2;
+    menor = (n3 < menor) ? n3 : menor;
 
-    for(i = 0; i < TAM; i++)
-        printf("%i\n", menor[i]);
+    meio = (n1 <= n2 && n1 >= n3 || n1 <= n3 && n1 >= n2) ? n1 : meio;
+    meio = (n2 <= n1 && n2 >= n3 || n2 <= n3 && n2 >= n1) ? n2 : meio;
+    meio = (n3 <= n1 && n3 >= n2 || n3 <= n2 && n3 >= n1) ? n3 : meio;
 
-    printf("\n");
-    for(i = 0; i < TAM; i++)
-        printf("%i\n", n[i]);
-    //printando resultados
-    
+    printf("%i\n%i\n%i\n\n", menor, meio, maior);
+    printf("%i\n%i\n%i\n", n1, n2, n3);
+
     return 0;
 }
