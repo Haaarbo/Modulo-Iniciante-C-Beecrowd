@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int hora1, hora2, minuto1, minuto2, tempoJogoHora, tempoJogoMinuto;
+    
+    if(hora1 >= hora2)
+    {
+        if(minuto1 >= minuto2)
+        {
+            hora2 += 24;
+            minuto2 += 60;
+            hora2--;
+        }
+    }
+        
+    tempoJogoHora = hora2 - hora1;
+    tempoJogoMinuto = minuto2 - minuto1;
+    if(tempoJogoMinuto == 60)
+    {
+        tempoJogoHora++;
+        tempoJogoMinuto = 0;
+    }
+    
+    
+    printf("O JOGO DUROU %i HORA(S) E %i MINUTO(S)\n", tempoJogoHora, tempoJogoMinuto);
+        
+
+    return 0;
+}
