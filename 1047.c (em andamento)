@@ -2,28 +2,34 @@
 
 int main()
 {
-    int hora1, hora2, minuto1, minuto2, tempoJogoHora, tempoJogoMinuto;
-    
-    if(hora1 >= hora2)
-    {
-        if(minuto1 >= minuto2)
+    int horaInicial, horaFinal;
+    int minutoInicial, minutoFinal;
+    int difHora = 0, difMinuto = 0;
+    //variaveis do tempo inicial, do tempo final e de sua diferenca
+
+    scanf("%d %d %d %d", &horaInicial, &minutoInicial, &horaFinal, &minutoFinal);
+
+    if(minutoInicial == minutoFinal && horaInicial == horaFinal)
         {
-            hora2 += 24;
-            minuto2 += 60;
-            hora2--;
+            horaFinal += 24;
+            difMinuto = 0;
         }
+
+    else{
+        if(minutoInicial > minutoFinal)
+        {
+            difHora--;
+            minutoFinal += 60;
+        }
+
+        if(horaInicial > horaFinal)
+            horaFinal += 24;
     }
-        
-    tempoJogoHora = hora2 - hora1;
-    tempoJogoMinuto = minuto2 - minuto1;
-    if(tempoJogoMinuto == 60)
-    {
-        tempoJogoHora++;
-        tempoJogoMinuto = 0;
-    }
-    
-    
-    printf("O JOGO DUROU %i HORA(S) E %i MINUTO(S)\n", tempoJogoHora, tempoJogoMinuto);
+
+    difHora += horaFinal - horaInicial;
+    difMinuto += minutoFinal - minutoInicial;
+
+    printf("O JOGO DUROU %i HORA(S) E %i MINUTO(S)\n", difHora, difMinuto);
         
 
     return 0;
