@@ -5,7 +5,6 @@
 int main()
 {
     char p1[TAM], p2[TAM], p3[TAM];
-    printf("Insira tres palavras a seguir:\n");
 
     gets(p1);
     gets(p2);
