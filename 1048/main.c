@@ -37,7 +37,7 @@ int main()
     reajuste = (salarioAntigo*reajustePer)/100;
     salarioAtual = reajuste + salarioAntigo;
 
-    printf("Salario atual: %.2f\n", salarioAtual);
+    printf("Novo salario: %.2f\n", salarioAtual);
     printf("Reajuste ganho: %.2f\n", reajuste);
     printf("Em percentual: %i %\n", reajustePer);
 
