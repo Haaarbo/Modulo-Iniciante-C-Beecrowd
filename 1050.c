@@ -41,7 +41,8 @@ int main()
         break;
 
     default:
-        printf("DDD invalido\n");
+        printf("DDD nao cadastrado\n");
+        break;
     }
 
     return 0;
