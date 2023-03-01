@@ -5,9 +5,29 @@ int main()
     int diaInicio, horaInicio, minutoInicio, segundoInicio;
     int diaFim, horaFim, minutoFim, segundoFim;
     int diaDif, horaDif, minutoDif, segundoDif;
-
-    scanf("%i %i %i %i", &diaInicio, &horaInicio, &minutoInicio, &segundoInicio);
-    scanf("%i %i %i %i", &diaFim, &horaFim, &minutoFim, &segundoFim);
+    
+    printf("Dia ");
+    scanf("%i", &diaInicio);
+    printf("\n");
+    
+    scanf("%i", &horaInicio);
+    printf(" : ");
+    scanf("%i", &minutoInicio);
+    printf(" : ");
+    scanf("%i", &segundoInicio);
+    printf("\n");
+    
+    
+    printf("Dia ");
+    scanf("%i", &diaFim);
+    printf("\n");
+    
+    scanf("%i", &horaFim);
+    printf(" : ");
+    scanf("%i", &minutoFim);
+    printf(" : ");
+    scanf("%i", &segundoFim);
+    printf("\n");
 
 
     diaDif = diaFim - diaInicio;
