@@ -6,28 +6,14 @@ int main()
     int diaFim, horaFim, minutoFim, segundoFim;
     int diaDif, horaDif, minutoDif, segundoDif;
     
-    printf("Dia ");
-    scanf("%i", &diaInicio);
-    printf("\n");
+    int kk;
+    char buffer[5];
     
-    scanf("%i", &horaInicio);
-    printf(" : ");
-    scanf("%i", &minutoInicio);
-    printf(" : ");
-    scanf("%i", &segundoInicio);
-    printf("\n");
+    kk = scanf(" %s", buffer);
+    kk = scanf(" %i %d : %d : %d", &diaInicio, &horaInicio, &minutoInicio, &segundoInicio);
     
-    
-    printf("Dia ");
-    scanf("%i", &diaFim);
-    printf("\n");
-    
-    scanf("%i", &horaFim);
-    printf(" : ");
-    scanf("%i", &minutoFim);
-    printf(" : ");
-    scanf("%i", &segundoFim);
-    printf("\n");
+    kk = scanf(" %s", buffer);
+    kk = scanf(" %i %d : %d : %d", &diaFim, &horaFim, &minutoFim, &segundoFim);
 
 
     diaDif = diaFim - diaInicio;
