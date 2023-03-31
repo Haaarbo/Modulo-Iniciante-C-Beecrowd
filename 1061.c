@@ -2,66 +2,43 @@
 
 int main()
 {
-    int diaInicio, horaInicio, minutoInicio, segundoInicio;
-    int diaFim, horaFim, minutoFim, segundoFim;
-    int diaDif, horaDif, minutoDif, segundoDif;
+ int h0, h, hDif;
+ int m0, m, mDif;
+ int s0, s, sDif;
+ int d0, d, dDif;
 
-    scanf("%i %i %i %i", &diaInicio, &horaInicio, &minutoInicio, &segundoInicio);
-    scanf("%i %i %i %i", &diaFim, &horaFim, &minutoFim, &segundoFim);
+ scanf("Dia %d",&d0);
+ scanf("%d : %d : %d\n", &h0, &m0, &s0);
+ scanf("Dia %d",&d);
+ scanf("%d : %d : %d", &h, &m, &s);
 
+sDif = s - s0;
+mDif = m - m0;
+hDif = h - h0;
+dDif = d - d0;
 
-    diaDif = diaFim - diaInicio;
+if(sDif < 0)
+{
+	sDif += 60;
+	mDif--;
+}
 
+if(mDif < 0)
+{
+	mDif += 60;
+	hDif--;
+}
 
-    horaDif = horaFim - horaInicio;
+if(hDif < 0)
+{
+	hDif += 24;
+	dDif--;
+}
 
-    if(horaDif >= 24)
-    {
-        horaDif -= 24;
-        diaDif++;
-    }
+    printf("%d dia(s)\n", dDif);
+    printf("%d hora(s)\n", hDif);
+    printf("%d minuto(s)\n", mDif);
+    printf("%d segundo(s)\n", sDif);
 
-    if(horaDif < 0)
-    {
-        horaDif += 24;
-        diaDif--;
-    }
-
-
-    minutoDif = minutoFim - minutoInicio;
-
-    if(minutoDif >= 60)
-    {
-        minutoDif -= 60;
-        horaDif++;
-    }
-
-    if(minutoDif < 0)
-    {
-        minutoDif += 60;
-        horaDif--;
-    }
-
-
-    segundoDif = segundoFim - segundoInicio;
-
-    if(segundoDif < 0)
-    {
-        segundoDif += 60;
-        minutoDif--;
-    }
-
-    if(segundoDif >= 60)
-    {
-        segundoDif -= 60;
-        minutoDif++;
-    }
-
-
-    printf("%d dia(s)\n", diaDif);
-    printf("%d hora(s)\n", horaDif);
-    printf("%d minuto(s)\n", minutoDif);
-    printf("%d segundo(s)\n", segundoDif);
-
-    return 0;
+ return 0;
 }
