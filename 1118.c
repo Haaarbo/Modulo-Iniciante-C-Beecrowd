@@ -2,7 +2,7 @@
 
 int main(){
     float nota, media = 0.0;
-    int op = 0, qtdNota = 0;
+    int op, qtdNota = 0;
 
     do{
         op = 0;
