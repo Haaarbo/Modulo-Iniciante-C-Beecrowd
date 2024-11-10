@@ -1,60 +1,33 @@
 #include <stdio.h>
 
-float atribuirNota()
-{
-    float nota;
-    
-    while(1)
-    {
+int main(){
+    float nota, media = 0.0;
+    int op = 0, qtdNota = 0;
+
+    do{
+        op = 0;
         scanf("%f", &nota);
-        if(nota >= 0 && nota <= 10)
-            break;
-            
-        else
-            printf("nota invalida\n");
-    }
-    return nota;
-}
 
-int main()
-{
-    float nota1;
-    float nota2;
-    float media;
-    int X;
-    
-    while(X != 2)
-    {
-        float nota1 = atribuirNota();
-        float nota2 = atribuirNota();
-        float media = (nota1+nota2)/2;
-        
-        printf("media = %.2f\n", media);
-        printf("novo calculo (1-sim 2-no)\n");
+        if(nota >= 0 && nota <= 10){
+            media += nota;
+            qtdNota++;
 
-        
-        for(;X != 2;)
-        {
-            scanf("%d", &X);
-            switch(X)
-            {
-                case 1:
-                    break;
-                    
-                case 2:
-                    printf("Finalizando...\n\n");
-                    break;
-                
-                default:
-                    printf("novo calculo (1-sim 2-no)\n");
-                    break;
+            if(qtdNota == 2){
+                qtdNota = 0;
+                media /= 2;
+
+                printf("media = %.2f\n", media);
+                media = 0.0;
+
+                while(op != 1 && op != 2){
+                    printf("novo calculo (1-sim 2-nao)\n");
+                    scanf("%d", &op);
+                }
             }
+        }else{
+            printf("nota invalida\n");
         }
-        
-        
-    }
-
-    
+    }while(op != 2);
 
     return 0;
 }
